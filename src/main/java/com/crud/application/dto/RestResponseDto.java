@@ -24,27 +24,7 @@ public class RestResponseDto  <T> implements Serializable {
         setSuccess(false);
     }
 
-    public void makeUnauthorizedResponse() {
 
-        List<ErrorDto> errorList = new ArrayList<>();
-        errorList.add(new ErrorDto(Error.AUTHENTICATION_ERROR));
-        setErrors(errorList);
-        setStatus(HttpStatus.OK); //HttpStatus.UNAUTHORIZED
-    }
-
-    public void makeInternalServerErrorResponse() {
-
-        List<ErrorDto> errorList = new ArrayList<>();
-        errorList.add(new ErrorDto(Error.INTERNAL_SERVER_ERROR));
-        setErrors(errorList);
-        setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
-    }
-
-    public void makeBadRequestResponse() {
-
-        setSuccess(false);
-        setStatus(HttpStatus.BAD_REQUEST);
-    }
 
     public void makeSuccessResponse() {
         this.makeSuccessResponse(HttpStatus.OK);

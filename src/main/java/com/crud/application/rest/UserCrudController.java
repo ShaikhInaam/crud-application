@@ -47,14 +47,11 @@ public class UserCrudController{
     }
 
     @GetMapping(value = "/findAll")
-    public RestResponseDto findAllUsers(Model model){
+    public RestResponseDto findAllUsers(){
         RestResponseDto restResponseDto=new  RestResponseDto();
 
         try {
             restResponseDto = userCrudBusinessLogic.findAll();
-            model.addAttribute("success",restResponseDto.getSuccess());
-            model.addAttribute("data",restResponseDto.getData());
-            model.addAttribute("errors",restResponseDto.getErrors());
         }catch (Exception ex){
             restResponseDto.makeFailureResponse(Error.INTERNAL_SERVER_ERROR);
             return restResponseDto;
