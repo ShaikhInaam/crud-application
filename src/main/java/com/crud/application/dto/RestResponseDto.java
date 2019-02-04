@@ -1,7 +1,7 @@
 package com.crud.application.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.crud.application.enums.Error;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
 

@@ -4,10 +4,13 @@ import com.crud.application.dto.RestResponseDto;
 import com.crud.application.dto.UserDto;
 import com.crud.application.entity.User;
 import com.crud.application.enums.Error;
-import com.crud.application.service.UserCrudService;
+import com.crud.application.service.java.UserCrudService;
 import com.crud.application.utils.EntityHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 class UserCrudBusinessLogicImpl implements UserCrudBusinessLogic{
@@ -86,7 +89,16 @@ class UserCrudBusinessLogicImpl implements UserCrudBusinessLogic{
     @Override
     public RestResponseDto findAll() {
 
-        return  userCrudService.findAll();
+        RestResponseDto restResponseDto=new RestResponseDto();
+        List<User> userList = userCrudService.findAll();
+        List<UserDto> userDtoList=new ArrayList();
+
+        for (User user:userList) {
+            userDtoList.add(new UserDto(user));
+        }
+
+        restResponseDto.makeSuccessResponse(userDtoList);
+        return restResponseDto;
     }
 
 }

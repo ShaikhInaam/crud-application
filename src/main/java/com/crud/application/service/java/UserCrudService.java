@@ -1,9 +1,11 @@
-package com.crud.application.service;
+package com.crud.application.service.java;
 
 import com.crud.application.dto.RestResponseDto;
 import com.crud.application.dto.UserDto;
 import com.crud.application.entity.User;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public interface UserCrudService {
@@ -15,5 +17,5 @@ public interface UserCrudService {
     User checkDuplicateContact(UserDto userDto);
     RestResponseDto findById(Integer id);
     RestResponseDto findByContactNumber(String contactNumber);
-    RestResponseDto findAll();
+    List<User> findAll();
 }

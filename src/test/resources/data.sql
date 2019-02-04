@@ -1,0 +1,1 @@
+INSERT INTO user (id,contact_number, date, name) VALUES (1,'034534156', '2019-01-28 16:36:43', 'faisal');

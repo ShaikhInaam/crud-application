@@ -1,4 +1,4 @@
-package com.crud.application.rest;
+package com.crud.application.rest.java;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;

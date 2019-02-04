@@ -1,4 +1,4 @@
-package com.crud.application.service;
+package com.crud.application.service.java;
 
 import com.crud.application.dto.RestResponseDto;
 import com.crud.application.dto.UserDto;
@@ -9,12 +9,10 @@ import com.crud.application.utils.EntityHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.jws.soap.SOAPBinding;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
-class UserCrudServiceImpl implements UserCrudService {
+public class UserCrudServiceImpl implements UserCrudService {
 
     @Autowired
     UserRepository userRepository;
@@ -37,6 +35,7 @@ class UserCrudServiceImpl implements UserCrudService {
         RestResponseDto restResponseDto=new RestResponseDto();
         User user=new User(userDto,true);
         user=userRepository.save(user);
+
 
         restResponseDto.makeSuccessResponse(new UserDto(user));
         return restResponseDto;
@@ -89,19 +88,11 @@ class UserCrudServiceImpl implements UserCrudService {
 
     }
 
-    @Override
-    public RestResponseDto findAll() {
 
-        RestResponseDto restResponseDto=new RestResponseDto();
+    public List<User> findAll(){
         List<User> userList = userRepository.findAll();
-        List<UserDto> userDtoList=new ArrayList();
 
-        for (User user:userList) {
-            userDtoList.add(new UserDto(user));
-        }
-
-        restResponseDto.makeSuccessResponse(userDtoList);
-        return restResponseDto;
+        return userList;
     }
 
 }

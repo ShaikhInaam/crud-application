@@ -1,4 +1,4 @@
-package com.crud.application.rest;
+package com.crud.application.rest.java;
 
 
 import com.crud.application.business.UserCrudBusinessLogic;
@@ -6,7 +6,6 @@ import com.crud.application.dto.RestResponseDto;
 import com.crud.application.dto.UserDto;
 import com.crud.application.enums.Error;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

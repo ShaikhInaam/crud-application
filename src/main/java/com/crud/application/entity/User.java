@@ -24,7 +24,7 @@ public class User{
     private String name;
     private String contactNumber;
 
-    public User(UserDto userDto,Boolean isId){
+    public User(UserDto userDto, Boolean isId){
 
         Timestamp dateStamp=new Timestamp(userDto.getDate());
 

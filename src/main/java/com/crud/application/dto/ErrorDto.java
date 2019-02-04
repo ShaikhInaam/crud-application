@@ -1,7 +1,7 @@
 package com.crud.application.dto;
 
-import lombok.Data;
 import com.crud.application.enums.Error;
+import lombok.Data;
 
 @Data
 public class ErrorDto {
